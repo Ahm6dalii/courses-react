@@ -12,7 +12,7 @@ const useFetchUser = () => {
     });
     const fetchUsers = async () => {
         const response = await axiosInstance.get(`${api}/api/users?_limit=${perPage}&_page=${currentPage}&role=user`);
-        console.log(response, 'response response')
+
         return response;
     };
     const { data: usersData, error: usersError, isLoading: usersLoading } = useQuery(
@@ -21,7 +21,7 @@ const useFetchUser = () => {
     );
     const fetchAdmins = async () => {
         const response = await axiosInstance.get(`${api}/api/users?_limit=${perPage}&_page=${currentPage}&role=admin`);
-        console.log(response, 'response response')
+
         return response;
     };
 

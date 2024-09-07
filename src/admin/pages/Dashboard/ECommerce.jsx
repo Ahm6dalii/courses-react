@@ -9,10 +9,11 @@ import useFetchUser from '../../hooks/useFetchUser';
 const ECommerce = () => {
   const { users, admins } = useFetchUser()
   const { courses } = useCourses()
-  const coursesData = courses?.items
-  const adminsData = admins?.items
-  const usersData = users?.items
+  const coursesData = courses?.data.length * courses?.pages
+  const adminsData = admins?.data.length * admins?.pages
+  const usersData = users?.data.length * users?.pages
   const totalPrice = courses?.data.reduce((acc, course) => acc + course.price, 0);
+
 
   return (
     <>

@@ -47,10 +47,11 @@ const options = {
 const ChartThree = () => {
   const { users, admins } = useFetchUser()
   const { courses } = useCourses()
-  const coursesData = courses?.items
-  const adminsData = admins?.items
-  const usersData = users?.items
-  const totalPrice = courses?.data.reduce((acc, course) => acc + course.price, 0);
+  const coursesData = Number(courses?.data?.length * courses?.pages)
+  const adminsData = Number(admins?.data?.length * admins?.pages)
+  const usersData = Number(users?.data?.length * users?.pages)
+  const totalPrice = Number(courses?.data?.reduce((acc, course) => acc + course.price, 0))
+
 
   const [series, setSeries] = useState([totalPrice, usersData, adminsData, coursesData]);
 
@@ -67,10 +68,8 @@ const ChartThree = () => {
           </h5>
         </div>
         <div>
-
         </div>
       </div>
-
       <div className="mb-2">
         <div id="chartThree" className="mx-auto flex justify-center">
           <ReactApexChart options={options} series={series} type="donut" />

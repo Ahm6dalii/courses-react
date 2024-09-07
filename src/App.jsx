@@ -43,7 +43,7 @@ function App() {
               <Route path="/cart" element={<ProtectedRoot><CoursesCart /></ProtectedRoot>}></Route>
               <Route path="/courses" element={<CoursesList />}></Route>
               <Route path="/wishlist" element={<ProtectedRoot><Wishlist /></ProtectedRoot>}></Route>
-              <Route path='/admin/*' element={<ProtectedRoot><Admin /></ProtectedRoot>}></Route>
+              <Route path='/admin/*' element={<Admin />}></Route>
 
               <Route path='/register' element={<Register></Register>}></Route>
               <Route path='/login' element={<Login></Login>}></Route>

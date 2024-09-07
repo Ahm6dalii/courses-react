@@ -62,7 +62,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/admin">
-          <h1 className='ms-4 text-3xl'>SkillQuest </h1>
+          <h1 className='ms-4 text-3xl text-white'>SkillQuest </h1>
         </NavLink>
 
         <button
